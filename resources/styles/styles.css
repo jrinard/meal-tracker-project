@@ -1,4 +1,38 @@
+h1, h2, h3, h4 {
+  color: #fff;
+}
+
 li {
   list-style-type: none;
   margin: 10px;
+}
+
+.nav {
+  height: 50px;
+  background-color: #3e5268;
+  padding: 5px 15px;
+  border-radius: 5px,
+}
+.logo {
+  color: #fff;
+  font-size: 2em;
+}
+.date {
+  color: #7e9bb0;
+  font-size: 1em;
+  text-align:center;
+}
+
+.header {
+  height: 150px;
+}
+
+
+body {
+  background-color: #5e7a94;
+}
+
+
+.main {
+  margin: 50px;
 }
