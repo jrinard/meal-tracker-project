@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { FoodListComponent }  from './food-list.component';
 import { EditFoodComponent } from './edit-food.component';
 import { NewFoodComponent } from './new-food.component';
+import { AteTodayPipe } from  './atetoday.pipe';
 
 //Module Decorator
 @NgModule({
@@ -13,7 +14,8 @@ import { NewFoodComponent } from './new-food.component';
   declarations: [ AppComponent,
                   FoodListComponent,
                   EditFoodComponent,
-                   NewFoodComponent ], //array of all components that will reside in this module
+                  NewFoodComponent,
+                  AteTodayPipe ], //array of all components that will reside in this module
   bootstrap:    [ AppComponent ] // array of components required immediately upon launching the application
 })
 

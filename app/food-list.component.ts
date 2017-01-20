@@ -5,9 +5,14 @@ import { Food } from './food.model';
 @Component({
   selector: 'food-list',
   template: `
+  <select (change)="onChange($event.target.value)">
+    <option value="allFoods">All Food</option>
+    <option value="foodsEatenToday">Today's Food</option>
+  </select>
+
     <ul> <!-- repeater DIRECTIVE -->
-      <li *ngFor="let currentFood of childFoodList" >
-      {{currentFood.name}}, {{currentFood.details}}, {{currentFood.calories}}
+      <li *ngFor="let currentFood of childFoodList | atetoday:filterByAteToday" >
+      {{currentFood.name}}, {{currentFood.details}}, {{currentFood.calories}} - Eaten Today
       <input *ngIf="currentFood.ateToday === true" type="checkbox" checked (click)="toggleDone(currentFood)"/>
       <input *ngIf="currentFood.ateToday === false" type="checkbox" (click)="toggleDone(currentFood)"/>
       <button class="btn btn-xs" (click)="editButtonHasBeenClicked(currentFood)">Edit</button>
@@ -15,7 +20,6 @@ import { Food } from './food.model';
     </ul>
     `
   })
-
 
   export class FoodListComponent {
     @Input() childFoodList: Food[];// Imported through input and used in *ngFor
@@ -39,10 +43,10 @@ import { Food } from './food.model';
     //   }
     // }
 
-    // filterByCompleteness: string = "incompleteTasks";
+    filterByAteToday: string = "allfood";
 
-    // onChange(optionFromMenu): void {
-    //   this.filterByCompleteness = optionFromMenu;
-    // }
+    onChange(optionFromMenu): void {
+      this.filterByAteToday = optionFromMenu;
+    }
 
   }
