@@ -1,5 +1,5 @@
 h1, h2, h3, h4 {
-  color: #21303d;
+  color: #fff;
 }
 
 li {
@@ -61,12 +61,15 @@ body {
 }
 .foodName {
   font-size: 2em;
+  color: #21303d;
 }
 .foodDetails {
-  font-size: 1em;
+  font-size: 1.2em;
+  color: #21303d;
 }
 .foodCalories {
-  font-size: 1em;
+  font-size: 1.2em;
+  color: #21303d;
 }
 
 .dark-well {

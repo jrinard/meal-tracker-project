@@ -6,13 +6,13 @@ import { Food } from './food.model';
   template: `
     <h3>Enter New Food</h3>
     <div class="form-group">
-      <input class="form-control" placeholder="Name" #newName>
+      <input class="form-control" required placeholder="Name" #newName>
     </div>
     <div class="form-group">
-      <input class="form-control" placeholder="Details" #newDetails>
+      <input class="form-control" required placeholder="Details" #newDetails>
     </div>
     <div class="form-group">
-      <input class="form-control" placeholder="Calories" #newCalories>
+      <input class="form-control" required placeholder="Calories" #newCalories>
     </div>
     <div>
       <button class="btn"(click)="submitForm(newName.value, newDetails.value, newCalories.value); newName.value='';">Add</button>
@@ -27,4 +27,5 @@ export class NewFoodComponent {
     let newFoodToAdd: Food = new Food(name, details, calories);
     this.newFoodSender.emit(newFoodToAdd);
   }
+
 }
