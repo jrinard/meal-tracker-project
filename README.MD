@@ -13,7 +13,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone https://github.com/jrinard/meal-tracker-project` this repository
 * `cd meal-tracker-project`
 * `npm install`
 * `bower install`

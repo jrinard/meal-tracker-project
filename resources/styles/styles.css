@@ -4,17 +4,14 @@
     /*font-family: 'Oswald', sans-serif;*/
     letter-spacing: 2px;
 }
-
 h1, h2, h3, h4 {
   color: #fff;
 }
-
 li {
   list-style-type: none;
   margin: 10px;
   color: #fff;
 }
-
 hr {
     display: block;
     height: 1px;
@@ -23,33 +20,29 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
-
+body {
+  background-color: #21303d;
+}
 .nav {
-  height: 50px;
+  height: 55px;
   background-color: #3e5268;
   padding: 5px 15px;
   border-radius: 5px,
 }
 .logo {
   color: #fff;
-  font-size: 2em;
+  font-size: 2.5em;
 }
 .date {
   color: #7e9bb0;
   font-size: 1em;
   text-align:center;
 }
-
 .header {
   height: 15px;
 }
-
-body {
-  background-color: #21303d;
-}
-
 .main {
-  margin: 50px;
+  margin: 20px;
 }
 .new-form {
   background-color: #3e5268;
