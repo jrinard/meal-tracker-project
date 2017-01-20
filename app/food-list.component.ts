@@ -6,16 +6,14 @@ import { Food } from './food.model';
   selector: 'food-list',
   template: `
   <select (change)="onChange($event.target.value)">
-    <option value="allFoods">All Food</option>
-    <option value=">500">More Then 500 Calories (Today's Food)</option>
+    <option value="allFoods">All Foods</option>
+    <option value=">500">More Then 500 Calories</option>
     <option value="<500">Less Then 500 Calories</option>
   </select>
 
     <ul> <!-- repeater DIRECTIVE -->
-      <li *ngFor="let currentFood of childFoodList | FILTER:filterByCalorie" >
+      <li *ngFor="let currentFood of childFoodList | Filter:filterByCalorie" >
       {{currentFood.name}}, {{currentFood.details}}, {{currentFood.calories}} - Eaten Today
-      <input *ngIf="currentFood.ateToday === true" type="checkbox" checked (click)="toggleDone(currentFood)"/>
-      <input *ngIf="currentFood.ateToday === false" type="checkbox" (click)="toggleDone(currentFood)"/>
       <button class="btn btn-xs" (click)="editButtonHasBeenClicked(currentFood)">Edit</button>
       </li>
     </ul>

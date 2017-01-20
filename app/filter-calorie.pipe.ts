@@ -2,24 +2,23 @@ import {Pipe, PipeTransform} from '@angular/core';
 import {Food} from './food.model';
 
 
-@Pipe({ //Decorator
-  name: "FILTER",
-  pure: false //tells Angular to check if output has changed more often, causing it to update as soon as we change something about a Food, not only when the menu option changes.
+@Pipe({
+  name: "Filter",
+  pure: false
 })
 
-export class FilterByCaloriePipe implements PipeTransform { //CompletenessPipe class must implement all properties or methods outlined in Angular's PipeTransform interface.
-  transform(input: Food[], CALORIES) { // Pipetransform must contain Tranform //array of objects to be transformed (or filtered
+export class FilterByCaloriePipe implements PipeTransform {
+  transform(input: Food[], selectedValue) {
     let output: Food[] = [];
-
-    if (CALORIES === ">500") {
-      for (let i = 0; i < input.length; i++) { // filtering incomplete foods and pushing to output
+    if (selectedValue === ">500") {
+      for (let i = 0; i < input.length; i++) {
         if (input[i].calories >= 500) {
           output.push(input[i]);
         }
       }
       return output;
-    } else if (CALORIES === "<500") {
-      for (let i = 0; i < input.length; i++) { // filtering incomplete foods and pushing to output
+    } else if (selectedValue === "<500") {
+      for (let i = 0; i < input.length; i++) {
         if (input[i].calories < 500) {
           output.push(input[i]);
         }
