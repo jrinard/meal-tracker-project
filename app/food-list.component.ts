@@ -11,7 +11,7 @@ import { Food } from './food.model';
     <option value="<500">Less Then 500 Calories</option>
   </select>
 
-    <ul> <!-- repeater DIRECTIVE -->
+    <ul>
       <li *ngFor="let currentFood of childFoodList | Filter:filterByCalorie" >
       {{currentFood.name}}, {{currentFood.details}}, {{currentFood.calories}} - Eaten Today
       <button class="btn btn-xs" (click)="editButtonHasBeenClicked(currentFood)">Edit</button>
@@ -21,16 +21,16 @@ import { Food } from './food.model';
   })
 
   export class FoodListComponent {
-    @Input() childFoodList: Food[];// Imported through input and used in *ngFor
-    @Output() editButtonSender = new EventEmitter(); // Food/object gets passed up to parent via .emit
+    @Input() childFoodList: Food[];
+    @Output() editButtonSender = new EventEmitter();
 
     editButtonHasBeenClicked(foodToEdit: Food): void {
-      this.editButtonSender.emit(foodToEdit); // sending specific Food to the parent using emit
+      this.editButtonSender.emit(foodToEdit);
     }
 
-    toggleDone(clickedFood: Food): void {
-      clickedFood.ateToday = !clickedFood.ateToday; // Toggle boolean -> bool = !bool; -or- if bool is not initialized -> bool = !bool || true;
-    }
+    // toggleDone(clickedFood: Food): void {
+    //   clickedFood.calories = !clickedFood.calories; // Toggle boolean -> bool = !bool; -or- if bool is not initialized -> bool = !bool || true;
+    // }
     //
     // priorityColor(currentFood: Food): string {
     //   if (currentFood.calories === 1) {

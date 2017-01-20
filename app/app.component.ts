@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Food } from './food.model';
 
-//Part 1 COMPONENT ANNOTATION - determines how it APPEARS
 @Component({
   selector: 'app-root',
   template: `
@@ -18,7 +17,6 @@ import { Food } from './food.model';
   `
 })
 
-//Part 2 CLASS DEFINITION
 export class AppComponent {
   currentTime = new Date();
   month: number = this.currentTime.getMonth() + 1;
