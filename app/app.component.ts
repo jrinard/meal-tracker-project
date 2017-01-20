@@ -26,6 +26,8 @@ import { Food } from './food.model';
         </div> <!-- col end-->
       </div> <!-- main end-->
     </div> <!-- div End -->
+    <div class="footer">© Copyright 2017 Joshua Rinard
+    </div>
   </div> <!--row End -->
   `
 })
