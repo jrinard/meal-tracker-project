@@ -5,18 +5,29 @@ import { Food } from './food.model';
 @Component({
   selector: 'food-list',
   template: `
-  <select (change)="onChange($event.target.value)">
-    <option value="allFoods">All Foods</option>
-    <option value=">500">More Then 500 Calories</option>
-    <option value="<500">Less Then 500 Calories</option>
-  </select>
 
-    <ul>
-      <li *ngFor="let currentFood of childFoodList | Filter:filterByCalorie" >
-      {{currentFood.name}}, {{currentFood.details}}, {{currentFood.calories}} - Eaten Today
-      <button class="btn btn-xs" (click)="editButtonHasBeenClicked(currentFood)">Edit</button>
+  <div class="col-md-3">
+  <div class="dark-well">
+    <select class="form-control"(change)="onChange($event.target.value)">
+      <option value="allFoods">All Foods</option>
+      <option value=">500">More Then 500 Calories</option>
+      <option value="<500">Less Then 500 Calories</option>
+    </select>
+  </div>
+  </div>
+
+  <div class="col-md-9">
+    <div class="dark-well">
+      <li class="light-well" *ngFor="let currentFood of childFoodList | Filter:filterByCalorie" >
+      <h2 class="foodName">{{currentFood.name}}</h2>
+      <h4 class="foodDetails">{{currentFood.details}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="foodCalories">Calories: {{currentFood.calories}}</span></h4><hr>
+      <button class="btn btn-dark" (click)="editButtonHasBeenClicked(currentFood)">Edit</button>
       </li>
-    </ul>
+  </div>
+    </div>
+
+
     `
   })
 

@@ -7,25 +7,26 @@ import { Food } from './food.model';
   selector: 'app-root',
   template: `
 <div class="container-fluid">
-<div class="row">
-<div class="main">
-<div class="nav">
-  <span class="logo">Meal Tracker</span>&nbsp;&nbsp;&nbsp;
-  <span class="date">{{month}}/{{day}}/{{year}}</span>
-</div>
-<div class="header">
-
-</div>
-    <hr>
-<div class="list">
-    <food-list [childFoodList]="masterFoodList" (editButtonSender)="editFood($event)"></food-list>
-</div>
-    <hr>
-    <edit-food [childSelectedFood]="selectedFood" (doneButtonClickedSender)="finishedEditing()"></edit-food>
-    <new-food (newFoodSender)="addFood($event)"></new-food>
-  </div>
+  <div class="row">
+    <div class="main">
+      <div class="nav">
+        <span class="logo">Meal Tracker</span>&nbsp;&nbsp;&nbsp;
+        <span class="date">{{month}}/{{day}}/{{year}}</span>
+      </div>
+      <div class="header">
+      </div>
+      <div class="col-md-8">
+          <food-list [childFoodList]="masterFoodList" (editButtonSender)="editFood($event)"></food-list>
+        <edit-food [childSelectedFood]="selectedFood" (doneButtonClickedSender)="finishedEditing()"></edit-food>
+      </div> <!-- col end-->
+      <div class="col-md-4">
+        <div class="new-form">
+          <new-food (newFoodSender)="addFood($event)"></new-food>
+        </div> <!-- new-form end-->
+      </div> <!-- col end-->
+    </div> <!-- main end-->
   </div> <!-- Div End -->
-  </div> <!--Row End -->
+</div> <!--Row End -->
   `
 })
 

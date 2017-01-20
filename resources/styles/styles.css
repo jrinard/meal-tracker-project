@@ -1,10 +1,20 @@
 h1, h2, h3, h4 {
-  color: #fff;
+  color: #21303d;
 }
 
 li {
   list-style-type: none;
   margin: 10px;
+  color: #fff;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #21303d;
+    margin: 1em 0;
+    padding: 0;
 }
 
 .nav {
@@ -24,15 +34,73 @@ li {
 }
 
 .header {
-  height: 150px;
+  height: 15px;
 }
-
 
 body {
-  background-color: #5e7a94;
+  background-color: #21303d;
 }
-
 
 .main {
   margin: 50px;
+}
+.new-form {
+  background-color: #3e5268;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.btn {
+  background-color: #99b3bf;
+}
+.btn-dark {
+  background-color: #3e5268;
+}
+.move-right {
+  width: 300px;
+}
+.foodName {
+  font-size: 2em;
+}
+.foodDetails {
+  font-size: 1em;
+}
+.foodCalories {
+  font-size: 1em;
+}
+
+.dark-well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #3e5268;
+  border: 1px solid #21303d;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 2px 2px rgba(0, 0, 0, .05);
+}
+
+.dark-well-lg {
+  padding: 24px;
+  border-radius: 6px;
+}
+.dark-well-sm {
+  padding: 9px;
+  border-radius: 3px;
+}
+
+.light-well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #b2c8d2;
+  border: 1px solid #99b3bf;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 2px 2px rgba(0, 0, 0, .05);
+}
+
+.btn:hover {
+  background-color: #000;
+  color: #fff;
 }
