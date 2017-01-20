@@ -34,16 +34,6 @@ import { Food } from './food.model';
       this.editButtonSender.emit(foodToEdit);
     }
 
-    // priorityColor(currentFood: Food): string {
-    //   if (currentFood.calories === 1) {
-    //     return "bg-danger";
-    //   } else if (currentFood.calories === 2) {
-    //     return "bg-warning";
-    //   } else {
-    //     return "bg-info";
-    //   }
-    // }
-
     filterByCalorie: string = "allfood";
 
     onChange(optionFromMenu): void {

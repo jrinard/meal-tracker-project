@@ -58,5 +58,4 @@ export class AppComponent {
     this.masterFoodList.push(newFoodFromChild);
   }
 
-
 }

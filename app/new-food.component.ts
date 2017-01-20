@@ -21,11 +21,10 @@ import { Food } from './food.model';
 })
 
 export class NewFoodComponent {
-  @Output() newFoodSender = new EventEmitter(); //sends newFoodSender data up to root comp
+  @Output() newFoodSender = new EventEmitter();
 
   submitForm(name: string, details: string, calories: number): void {
     let newFoodToAdd: Food = new Food(name, details, calories);
     this.newFoodSender.emit(newFoodToAdd);
   }
-
 }
