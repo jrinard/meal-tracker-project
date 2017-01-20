@@ -4,15 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { Food } from './food.model';
 
 //Part 1 COMPONENT ANNOTATION - determines how it APPEARS
-@Component({ // defines new component should have functionalities outlines in the above imported component
-  selector: 'app-root', // defines the specific tag to render within.
+@Component({
+  selector: 'app-root',
   template: `
   <div class="container">
     <h1>Meal Tracker for {{month}}/{{day}}/{{year}}</h1>
     <hr>
-    <food-list [childFoodList]="masterFoodList" (editButtonSender)="editFood($event)"></food-list><!-- (editButtonSender)Transfer from child --> <!-- [childFoodList] Transfer from module down -->
+    <food-list [childFoodList]="masterFoodList" (editButtonSender)="editFood($event)"></food-list>
+    <hr>
     <edit-food [childSelectedFood]="selectedFood" (doneButtonClickedSender)="finishedEditing()"></edit-food>
-
+    <new-food (newFoodSender)="addFood($event)"></new-food>
   </div>
   `
 })
@@ -20,7 +21,7 @@ import { Food } from './food.model';
 //Part 2 CLASS DEFINITION
 export class AppComponent {
   currentTime = new Date();
-  month: number = this.currentTime.getMonth() + 1; //TIP when a variable in a component's class declaration references another variable in the class, it must be prefaced with the "this" keyword.
+  month: number = this.currentTime.getMonth() + 1;
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();
 

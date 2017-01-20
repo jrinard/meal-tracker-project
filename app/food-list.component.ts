@@ -6,7 +6,7 @@ import { Food } from './food.model';
   selector: 'food-list',
   template: `
     <ul> <!-- repeater DIRECTIVE -->
-      <li *ngFor="let currentFood of childFoodList" (click)="isDone(currentFood)" >
+      <li *ngFor="let currentFood of childFoodList" >
       {{currentFood.name}}, {{currentFood.details}}, {{currentFood.calories}}
       <input *ngIf="currentFood.ateToday === true" type="checkbox" checked (click)="toggleDone(currentFood)"/>
       <input *ngIf="currentFood.ateToday === false" type="checkbox" (click)="toggleDone(currentFood)"/>

@@ -5,13 +5,15 @@ import { AppComponent }   from './app.component';//actually refers to the root c
 import { FormsModule } from '@angular/forms';
 import { FoodListComponent }  from './food-list.component';
 import { EditFoodComponent } from './edit-food.component';
+import { NewFoodComponent } from './new-food.component';
 
 //Module Decorator
 @NgModule({
   imports: [ BrowserModule, FormsModule ], //imports array under the decorator imports other pieces of our application we want included in this module.
   declarations: [ AppComponent,
                   FoodListComponent,
-                  EditFoodComponent ], //array of all components that will reside in this module
+                  EditFoodComponent,
+                   NewFoodComponent ], //array of all components that will reside in this module
   bootstrap:    [ AppComponent ] // array of components required immediately upon launching the application
 })
 
